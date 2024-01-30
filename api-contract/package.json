@@ -1,0 +1,27 @@
+{
+  "name": "@jawnt-liam/api-contract",
+  "private": true,
+  "types": "./lib/index.d.ts",
+  "module": "./lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js"
+    }
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@ts-rest/core": "^3.33.0",
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "@ts-rest/core": "^3.0.0",
+    "zod": "^3.0.0"
+  }
+}

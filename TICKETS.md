@@ -1,0 +1,15 @@
+# TICKETS
+- [x] Define data models (reimbursments and "users")
+- [x] Set-up schema and migrations
+- [x] Bootstrap REST API service
+- [x] Implement auth middleware for requests
+- [ ] Implement auth flow for authentication *not required for now due to time constraints*
+- [x] Implement POST endpoint for reimbursments
+- [x] Implement GET endpoint for reimbursments
+- [x] Implement approve and deny endpoints for reimbursments
+- [ ] Bootstrap front-end application
+- [ ] Implement auth flow (front-end) *not required for now due to time constraints*
+- [ ] Implement requests overview page for bank member
+- [ ] Implemen "New reimbursment" form for bank member
+- [ ] Implement management page for bank administrator
+- [ ] Implement approve/deny functionality for administrator

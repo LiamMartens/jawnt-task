@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "@jawnt-liam/root",
+  "packageManager": "bun@1.0.23",
+  "workspaces": [
+    "api-contract",
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "turbo": "^1.11.3",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+  }
+}

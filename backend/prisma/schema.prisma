@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Currency {
+  USD
+}
+
+enum TransactionStatus {
+  PENDING
+  APPROVED
+  DENIED
+}
+
+enum UserRole {
+  MEMBER
+  ADMINISTRATOR
+}
+
+model FinancialInstitution {
+  id         String   @id @default(uuid()) @db.Uuid
+  name       String
+  location   String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  Users User[]
+
+  @@map("financial_institutions")
+}
+
+model User {
+  id                       String   @id @default(uuid()) @db.Uuid
+  first_name               String
+  last_name                String
+  financial_institution_id String   @db.Uuid
+  role                     UserRole
+  created_at               DateTime @default(now())
+  updated_at               DateTime @default(now())
+
+  FinancialInstitution  FinancialInstitution @relation(fields: [financial_institution_id], references: [id])
+  TransactionsSubmitted Transaction[]        @relation("transaction_submitted_by")
+  TransactionsDecided   Transaction[]        @relation("transaction_decided_by")
+
+  @@map("users")
+}
+
+model Transaction {
+  id                String            @id @default(uuid()) @db.Uuid
+  reason            String
+  amount_in_cents   Int
+  currency          Currency
+  status            TransactionStatus
+  submitted_by_uuid String            @db.Uuid
+  decided_by_uuid   String?           @db.Uuid
+  created_at        DateTime          @default(now())
+  updated_at        DateTime          @default(now())
+
+  SubmittedByUser User  @relation(name: "transaction_submitted_by", fields: [submitted_by_uuid], references: [id])
+  DecidedByUser   User? @relation(name: "transaction_decided_by", fields: [decided_by_uuid], references: [id])
+
+  @@map("transactions")
+}
