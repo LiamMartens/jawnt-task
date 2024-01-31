@@ -7,9 +7,9 @@
 - [x] Implement POST endpoint for reimbursments
 - [x] Implement GET endpoint for reimbursments
 - [x] Implement approve and deny endpoints for reimbursments
-- [ ] Bootstrap front-end application
+- [x] Bootstrap front-end application
 - [ ] Implement auth flow (front-end) *not required for now due to time constraints*
-- [ ] Implement requests overview page for bank member
-- [ ] Implemen "New reimbursment" form for bank member
-- [ ] Implement management page for bank administrator
-- [ ] Implement approve/deny functionality for administrator
+- [x] Implement requests overview page for bank member
+- [x] Implement "New reimbursment" form for bank member
+- [x] Implement management page for bank administrator
+- [x] Implement approve/deny functionality for administrator
