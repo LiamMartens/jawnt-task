@@ -19,8 +19,8 @@ The codebase is structured as a monorepository with the following parts:
   1. Navigate to the `./backend` directory
   2. Copy the `.env.example` file to `.env.`
   3. Run the development migrations using the following command (`bun prisma migrate dev`)
-  4. Run the server app itself using the command: `bun run start`
+  4. Run the development seed (`bun prisma db seed`)
+  5. Run the server app itself using the command: `bun run start`
 5. Running the front-end
   1. Navigate to the `./frontend` directory
-  2. Copy the `.env.example` file to `.env.`
-  3. Run the app using the command `bun run dev`
+  2. Run the app using the command `bun run dev`
